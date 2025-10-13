@@ -185,9 +185,9 @@ Command ID40, 挂断电话
 
     *2.2 add library search path (-L)*
     ```
-    ${workspace_loc}/../lib/aivoice/prebuilts/$(TARGET_CONFIG)  
+    ${workspace_loc}/../lib/aivoice/prebuilts/ameba_dsp/$(TARGET_CONFIG)
     ${workspace_loc}/../lib/xa_nnlib/v2.3.0/bin/$(TARGET_CONFIG)/Release  
-    ${workspace_loc}/../lib/lib_hifi5/project/hifi5_library/bin/$(TARGET_CONFIG)/Release
+    ${workspace_loc}/../lib/lib_hifi5/v3.1.0/bin/$(TARGET_CONFIG)
     ```
 
     *2.3 add librarys (-l)*
