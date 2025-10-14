@@ -90,26 +90,26 @@ Command ID39, 接听电话
 Command ID40, 挂断电话
 ---------------------------------------------------------
 
-[AIVOICE] rtk_aivoice version: v1.5.2#S6b1c736#N89da3ed#A6f74d23
-[AIVOICE] rtk_aivoice_model afe version: afe_2mic_asr_v1.4_AfePara_2mic50_v2.0_bf_v0.0_20250401
+[AIVOICE] rtk_aivoice version: v1.6.0#S87db3f2#N89da3ed#Ad90cdbe
+[AIVOICE] rtk_aivoice_model afe version: afe_2mic_asr_v1.5_AfePara_2mic50_v2.0_bf_v0.0_20250401
 [AIVOICE] rtk_aivoice_model vad version: vad_v7_opt
 [AIVOICE] rtk_aivoice_model kws version: kws_xqxq_v4.1_opt
 [AIVOICE] rtk_aivoice_model asr version: asr_cn_v8_opt
 [AIVOICE] rtk_aivoice_log_format version: v2
 [user] afe output 1 channels raw audio, others: {"abnormal_flag":0,"ssl_angle":-10}
-[AIVOICE] [KWS] result: {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.7746397852897644}
-[user] wakeup. {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.7746397852897644}
+[AIVOICE] [KWS] result: {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.766761064529419}
+[user] wakeup. {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.766761064529419}
 [user] voice angle 90.0
-[user] vad. status = 1, offset = 405
+[user] vad. status = 1, offset = 425
 [user] vad. status = 0, offset = 1865
 [AIVOICE] [ASR] result: {"type":0,"commands":[{"rec":"打开空调","id":1}]}
 [user] asr. {"type":0,"commands":[{"rec":"打开空调","id":1}]}
 [user] voice angle 90.0
 [user] vad. status = 1, offset = 525
-[AIVOICE] [KWS] result: {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.750707507133484}
-[user] wakeup. {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.750707507133484}
+[AIVOICE] [KWS] result: {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.81332826614379883}
+[user] wakeup. {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.81332826614379883}
 [user] voice angle 90.0
-[user] vad. status = 1, offset = 465
+[user] vad. status = 1, offset = 445
 [user] vad. status = 0, offset = 1765
 [AIVOICE] [ASR] result: {"type":0,"commands":[{"rec":"播放音乐","id":37}]}
 [user] asr. {"type":0,"commands":[{"rec":"播放音乐","id":37}]}
@@ -155,16 +155,16 @@ Command ID40, 挂断电话
 
 **full_flow_offline result**
 ```
-[AIVOICE] rtk_aivoice version: v1.5.2#S6b1c736#N89da3ed#A6f74d23
+[AIVOICE] rtk_aivoice version: v1.6.0#S87db3f2#N89da3ed#Ad90cdbe
 [AIVOICE] rtk_aivoice_model afe version: afe_1mic_asr_v1.1_AfePara_1mic_ASR_v0.0_20240626_COM_v0.3_20250528
 [AIVOICE] rtk_aivoice_model vad version: vad_v8_opt
 [AIVOICE] rtk_aivoice_model kws version: kws_xqxq_v5_opt
 [AIVOICE] rtk_aivoice_log_format version: v2
 [user] afe output 1 channels raw audio, others: 
-[AIVOICE] [KWS] result: {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.63414132595062256}
-[user] wakeup. {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.63414132595062256}
+[AIVOICE] [KWS] result: {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.62849670648574829}
+[user] wakeup. {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.62849670648574829}
 [user] vad. status = 1, offset = 1185
-[user] vad. status = 0, offset = 2625
+[user] vad. status = 0, offset = 2605
 [user] vad. status = 1, offset = 3885
 [user] vad. status = 0, offset = 5325
 ```

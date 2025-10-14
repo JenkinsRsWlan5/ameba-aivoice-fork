@@ -30,9 +30,9 @@
 		<locationURI>virtual:/virtual</locationURI>
 	</link>
 	<link>
-		<name>full_flow_offline/platform/ameba_dsp/testwav.c</name>
+		<name>full_flow_offline/testwav_3c.c</name>
 		<type>1</type>
-		<locationURI>PARENT-2-PROJECT_LOC/lib/aivoice/examples/full_flow_offline/platform/ameba_dsp/testwav.c</locationURI>
+		<locationURI>PARENT-2-PROJECT_LOC/lib/aivoice/examples/full_flow_offline/testwav_3c.c</locationURI>
 	</link>
     <link>
 		<name>full_flow_offline/platform/ameba_dsp/cJSON/cJSON.h</name>
