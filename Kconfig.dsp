@@ -28,6 +28,10 @@ if AIVOICE_EN_MENU
             bool "afe_res_2mic70mm"
             select AFE_RES_2MIC70MM if WHC_HOST || WHC_NONE
 
+        config AFE_RES_CIRCLE3MIC50MM_MENU
+            bool "afe_res_3mic50mm"
+            select AFE_RES_CIRCLE3MIC50MM if WHC_HOST || WHC_NONE
+
     endchoice
 
     config SELECT_VAD_RESOURCE
@@ -63,10 +67,6 @@ if AIVOICE_EN_MENU
         config KWS_XIAOQIANGXIAOQIANG_NIHAOXIAOQIANG_V5_125K_MENU
             bool "kws_xiaoqiangxiaoqiang_nihaoxiaoqiang_v5_125K"
             select KWS_XIAOQIANGXIAOQIANG_NIHAOXIAOQIANG_V5_125K if WHC_HOST || WHC_NONE
-
-        config KWS_CN_CUSTOMIZED_V2_410K_MENU
-            bool "kws_cn_customized_v2_410K"
-            select KWS_CN_CUSTOMIZED_V2_410K if WHC_HOST || WHC_NONE
 
         config KWS_CN_CUSTOMIZED_V3_750K_MENU
             bool "kws_cn_customized_v3_750K"
@@ -135,6 +135,9 @@ config AFE_RES_2MIC50MM
 config AFE_RES_2MIC70MM
     bool
 
+config AFE_RES_CIRCLE3MIC50MM
+    bool
+
 config VAD_V7_200K
     bool
 
@@ -145,9 +148,6 @@ config KWS_XIAOQIANGXIAOQIANG_NIHAOXIAOQIANG_V4_300K
     bool
 
 config KWS_XIAOQIANGXIAOQIANG_NIHAOXIAOQIANG_V5_125K
-    bool
-
-config KWS_CN_CUSTOMIZED_V2_410K
     bool
 
 config KWS_CN_CUSTOMIZED_V3_750K

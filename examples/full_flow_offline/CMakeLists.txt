@@ -23,5 +23,6 @@ target_compile_options(
 target_compile_definitions(
     ${CURRENT_LIB_NAME} PRIVATE
     TF_LITE_STATIC_MEMORY
+    USE_BINARY_RESOURCE=0
 )
 

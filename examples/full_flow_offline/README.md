@@ -36,7 +36,9 @@ The pre-recorded audio used in this example is a 3 channel audio, channel 1 and 
             [*] Enable TFLITE MICRO
             [*] Enable AIVoice
                 Select AFE Resource (afe_res_2mic50mm)  --->
-                Select KWS Resource (kws_res_xqxq)  --->
+                Select VAD Resource (vad_v7_200K)  --->
+                Select KWS Resource (kws_xiaoqiangxiaoqiang_nihaoxiaoqiang_v5_125K)  --->
+                Select ASR Resource (asr_cn_v10_1.1M)  --->
 
 2. **Build and Download**:
    * Refer to the SDK Examples section of the online documentation to generate images.
@@ -185,16 +187,22 @@ Command ID40, 挂断电话
 
     *2.2 add library search path (-L)*
     ```
-    ${workspace_loc}/../lib/aivoice/prebuilts/ameba_dsp/$(TARGET_CONFIG)
+    ${workspace_loc}/../lib/aivoice/prebuilts/lib/ameba_dsp/$(TARGET_CONFIG)
     ${workspace_loc}/../lib/xa_nnlib/v2.3.0/bin/$(TARGET_CONFIG)/Release  
     ${workspace_loc}/../lib/lib_hifi5/v3.1.0/bin/$(TARGET_CONFIG)
     ```
 
     *2.3 add librarys (-l)*
       * if use c library resources  
-        -laivoice -lafe_kernel -lkernel -lafe_res_2mic50mm -lvad -lkws -lasr -lfst -lcJSON -ltomlc99 -ltflite_micro -lxa_nnlib -lhifi5_dsp -laivoice_hal
+        -laivoice -lafe_kernel -lkernel -lafe_res_2mic50mm -lvad_v7_200K -lkws_xiaoqiangxiaoqiang_nihaoxiaoqiang_v4_300K -lasr_cn_v8_2M -lfst_cn_cmd_ac40 -lcJSON -ltomlc99 -ltflite_micro -lxa_nnlib -lhifi5_dsp -laivoice_hal
       * if use binary resources  
         -laivoice -lafe_kernel -lkernel -lcJSON -ltomlc99 -ltflite_micro -lxa_nnlib -lhifi5_dsp -laivoice_hal
+
+    *2.4 add symbols (-D)*
+      * if use c library resources  
+        USE_BINARY_RESOURCE 0
+      * if use binary resources  
+        USE_BINARY_RESOURCE 1
 
     **NOTE: if multiple definition of `app_example` occurs, please exclude other examples when build this example**
 
@@ -202,8 +210,16 @@ Command ID40, 挂断电话
 
 1. **add all aivoice example dependencies and linked resources into project**
 
+    * if use c library resources
+
     ```sh
     ./add_all_settings_to_project.sh /path/to/project_dsp/ full_flow_offline
+    ```
+
+    * if use binary resources
+  
+    ```sh
+    ./add_all_settings_to_project.sh /path/to/project_dsp/ full_flow_offline --no_lib_resources
     ```
 
     this shell script inserts every dependencies and linked resources into `Release.bts` and `.project`.
@@ -219,13 +235,44 @@ Command ID40, 挂断电话
 
     **NOTE: To build another example, please remove all added dependencies and linked resources from `Release.bts` and `.project`.**
 
+3. **if use binary resources, pack up binary resources as following steps show**
+
+   ```sh
+   cd ameba-rtos/amebalite_gcc_project/
+   ./menuconfig.py
+   ```
+
+    Select resources:
+
+    --------MENUCONFIG FOR General---------
+    CONFIG DSP Enable  --->
+    ...
+    CONFIG APPLICATION  --->
+       Graphics Libraries Configuration  --->
+       ...
+       AI Config  --->
+          [*] Enable TFLITE MICRO
+          [*] Enable AIVoice
+          [*]     Select AFE Resource
+                      AFE (afe_res_2mic50mm)  --->
+          [*]     Select VAD Resource
+                      VAD (vad_v7_200K)  --->
+          [*]     Select KWS Resource
+                      KWS (kws_xiaoqiangxiaoqiang_nihaoxiaoqiang_v4_300K)  --->
+          [*]     Select ASR Resource
+                      ASR (asr_cn_v8_2M)  --->
+          [*]     Select FST Resource
+                      FST (fst_cn_cmd_ac40)  --->
+    
+
+
 #### Expected Result (Amebalite DSP)
 
 The expected result on amebalite dsp is the same as [Expected Result (Amebasmart Psram)](#expected-result-amebasmart-psram)
 
 ### Using SDK AmebaSmart Linux
 
-1. There are dependencies between libraries, refer to `rtk-aivoice-algo.bb`.
+1. There are dependencies between libraries, refer to `./Makefile` and `rtk-aivoice-algo.bb`.
    bb file is `pgos/sources/yocto/meta-realtek/meta-sdk/recipes-rtk/aivoice/rtk-aivoice-algo.bb`.
 
 2. use ```bitbake rtk-aivoice-algo``` to compile the aivoice algo module,
@@ -234,3 +281,43 @@ The expected result on amebalite dsp is the same as [Expected Result (Amebasmart
 #### Expected Result (AmebaSmart Linux)
 
 The expected result on amebasmart linux is the same as [Expected Result (Amebasmart Psram)](#expected-result-amebasmart-psram)
+
+### Pack Up Binary Resources
+
+If you want to use binary resources instead of c library resources, you need to do the following:
+
+#### Using SDK ameba-rtos menuconfig
+
+1. **Switch to ameba-rtos**
+
+   ```sh
+   cd ameba-rtos/amebalite_gcc_project/
+   ```
+
+2. **Select resources in menuconfig**
+
+   ```sh
+   ./menuconfig.py
+   ```
+
+    --------MENUCONFIG FOR General---------
+    CONFIG DSP Enable  --->
+    ...
+    CONFIG APPLICATION  --->
+       Graphics Libraries Configuration  --->
+       ...
+       AI Config  --->
+          [*] Enable TFLITE MICRO
+          [*] Enable AIVoice
+          [*]     Select AFE Resource
+                      AFE (afe_res_2mic50mm)  --->
+          [*]     Select VAD Resource
+                      VAD (vad_v7_200K)  --->
+          [*]     Select KWS Resource
+                      KWS (kws_xiaoqiangxiaoqiang_nihaoxiaoqiang_v4_300K)  --->
+          [*]     Select ASR Resource
+                      ASR (asr_cn_v8_2M)  --->
+          [*]     Select FST Resource
+                      FST (fst_cn_cmd_ac40)  --->
+
+3. **Pack up binary resources**
