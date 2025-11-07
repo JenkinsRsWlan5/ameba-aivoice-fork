@@ -49,8 +49,8 @@ elseif(CONFIG_KWS_CN_CUSTOMIZED_V3_750K)
 endif()
 
 set(ASR_RESOURCE asr_cn_v8_2M)
-if(CONFIG_ASR_CN_V10_1_1M)
-    set(ASR_RESOURCE asr_cn_v10_1.1M)
+if(CONFIG_ASR_CN_V10_1M)
+    set(ASR_RESOURCE asr_cn_v10_1M)
 endif()
 
 if(CONFIG_AMEBADPLUS)

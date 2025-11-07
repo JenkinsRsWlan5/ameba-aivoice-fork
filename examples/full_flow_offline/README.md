@@ -38,7 +38,7 @@ The pre-recorded audio used in this example is a 3 channel audio, channel 1 and 
                 Select AFE Resource (afe_res_2mic50mm)  --->
                 Select VAD Resource (vad_v7_200K)  --->
                 Select KWS Resource (kws_xiaoqiangxiaoqiang_nihaoxiaoqiang_v5_125K)  --->
-                Select ASR Resource (asr_cn_v10_1.1M)  --->
+                Select ASR Resource (asr_cn_v10_1M)  --->
 
 2. **Build and Download**:
    * Refer to the SDK Examples section of the online documentation to generate images.
@@ -233,7 +233,7 @@ Command ID40, 挂断电话
 
     binary image `dsp_all.bin` will be automatically generated under `dsp/source/project/image/`.
 
-    **NOTE: To build another example, please remove all added dependencies and linked resources from `Release.bts` and `.project`.**
+    **NOTE: For proper operation, please run this script only in a cleaning working directory, exactly as retrieved from the git repository. To build another example, please remove all added dependencies and linked resources from `Release.bts` and `.project`.**
 
 3. **if use binary resources, pack up binary resources as following steps show**
 

@@ -84,9 +84,9 @@ if AIVOICE_EN_MENU
             bool "asr_cn_v8_2M"
             select ASR_CN_V8_2M if WHC_HOST || WHC_NONE
 
-        config ASR_CN_V10_1.1M_MENU
-            bool "asr_cn_v10_1.1M"
-            select ASR_CN_V10_1.1M if WHC_HOST || WHC_NONE
+        config ASR_CN_V10_1M_MENU
+            bool "asr_cn_v10_1M"
+            select ASR_CN_V10_1M if WHC_HOST || WHC_NONE
     endchoice
 
     config SELECT_FST_RESOURCE
@@ -156,7 +156,7 @@ config KWS_CN_CUSTOMIZED_V3_750K
 config ASR_CN_V8_2M
     bool
 
-config ASR_CN_V10_1.1M
+config ASR_CN_V10_1M
     bool
 
 config FST_CN_CMD_AC40

@@ -83,8 +83,12 @@ Some algorithm flows have been implemented to facilitate user development.
 
 This example shows how to use AIVoice full flow with a pre-recorded 3 channel audio and will run only once after EVB reset. **Audio functions such as recording and playback are not integrated.** 
 
-Please refer to *example/full_flow_offline/REAME.md* for details.
+Please refer to *examples/full_flow_offline/README.md* for details.
 
-### AIVoice Realtime: Full flow with realtime audio stream
+### SpeechMind Realtime: Microphone audio stream input
 
-Coming soon...
+[SpeechMind](https://github.com/Ameba-AIoT/speechmind) is an intelligent voice assistant framework that **integrates AIVoice with audio functions such as recording and playback**. Its demo implementation varies by chip:
+
+- AmebaLite (RTL8726E and RTL8713E): Refer to *examples/speechmind_demo/README.md* for DSP part, and refer to SpeechMind for MCU part.
+- AmebaSmart (RTL8730E): RTOS is supported. Refer to SpeechMind for details.
+- Other chip/OS: Coming soon...
