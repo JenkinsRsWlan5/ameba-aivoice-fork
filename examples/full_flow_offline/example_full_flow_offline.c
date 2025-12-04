@@ -10,7 +10,6 @@
 /*****************************************************************************/
 //            aivoice flow and afe ssl configuration
 /*****************************************************************************/
-#define AIVOICE_TARGET_AMEBADPLUS   (0)
 #if AIVOICE_TARGET_AMEBADPLUS
 #define MIC_NUM                     (1)
 #define AIVOICE_ENABLE_AFE_SSL      (0)
@@ -191,7 +190,6 @@ void aivoice_algo_offline_example(void)
 	 */
 #if AIVOICE_TARGET_AMEBADPLUS
 	struct afe_config afe_param = AFE_CONFIG_ASR_DEFAULT_1MIC();
-	afe_param.ref_num = 0;
 #else
 	struct afe_config afe_param = AFE_CONFIG_ASR_DEFAULT_2MIC50MM();
 #endif
