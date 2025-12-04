@@ -4,9 +4,19 @@ target_sources(
     ${CURRENT_LIB_NAME} PRIVATE
     example_full_flow_offline.c
     platform/ameba_rtos/app_example.c
-    # platform/ameba_rtos/testwav_1c.c
-    testwav_3c.c
 )
+
+if(CONFIG_AMEBASMART)
+    target_sources(
+        ${CURRENT_LIB_NAME} PRIVATE
+        testwav_3c.c
+    )
+elseif(CONFIG_AMEBADPLUS)
+    target_sources(
+        ${CURRENT_LIB_NAME} PRIVATE
+        platform/ameba_rtos/testwav_2c.c
+    )
+endif()
 
 target_include_directories(
     ${CURRENT_LIB_NAME} PRIVATE
@@ -26,3 +36,14 @@ target_compile_definitions(
     USE_BINARY_RESOURCE=0
 )
 
+if(CONFIG_AMEBASMART)
+    target_compile_definitions(
+        ${CURRENT_LIB_NAME} PRIVATE
+        AIVOICE_TARGET_AMEBADPLUS=0
+    )
+elseif(CONFIG_AMEBADPLUS)
+    target_compile_definitions(
+        ${CURRENT_LIB_NAME} PRIVATE
+        AIVOICE_TARGET_AMEBADPLUS=1
+    )
+endif()

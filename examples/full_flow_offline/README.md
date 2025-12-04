@@ -121,37 +121,16 @@ Command ID40, 挂断电话
 #### AmebaDplus KM4
 
 > **Note: This chip only supports single microphone input and does not support ASR functionality.**
+> **Default: afe_kws_vad flow with 1mic array afe resource**
 
-1. **Replace Test Audio**:
-   * Modify CMakeLists.txt to use `platform/ameba_rtos/testwav_1c.wav` as the test audio file
-   * Place test audio file in the flash region using `__attribute__((section(".audio.data")))` and modify the linker script `amebadplus_gcc_project/project_km4/asdk/ld/ameba_img2_all.ld` by adding the following to `.xip_image2.text` section:
-  
-    ```ld
-    .xip_image2.text :
-    {
-        __flash_text_start__ = .;
-        *(.audio.data*)
-        *(.non.dram.text*)
-        __flash_text_end__ = .;
-    } > KM4_IMG2_XIP
-    ```
-
-2. **Modify Code to Run afe_kws_vad Flow**:
-   * Set the interface and parameters:
-  
-    ```c
-    #define AIVOICE_TARGET_AMEBADPLUS   (1)
-    ```
-
-3. **Configure menuconfig**:
+1. **Configure menuconfig**:
    * Enable the following options:
     ```< CONFIG APPLICATION  ---> AI Config  ---> [*] Enable TFLITE MICRO```
     ```< CONFIG APPLICATION  ---> AI Config  ---> [*] Enable AIVoice -> Select AFE Resource (afe_res_1mic)```
 
-4. **Build and Download**:
+2. **Build and Download**:
    * Refer to the SDK Examples section of the online documentation to generate images.
    * `Download` images to board by Ameba Image Tool.
-
 
 ##### Expected Result (Amebadplus KM4)
 
@@ -163,12 +142,12 @@ Command ID40, 挂断电话
 [AIVOICE] rtk_aivoice_model kws version: kws_xqxq_v5_opt
 [AIVOICE] rtk_aivoice_log_format version: v2
 [user] afe output 1 channels raw audio, others: 
-[AIVOICE] [KWS] result: {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.62849670648574829}
-[user] wakeup. {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.62849670648574829}
-[user] vad. status = 1, offset = 1185
-[user] vad. status = 0, offset = 2605
-[user] vad. status = 1, offset = 3885
-[user] vad. status = 0, offset = 5325
+[AIVOICE] [KWS] result: {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.80648398399353027}
+[user] wakeup. {"id":2,"keyword":"ni-hao-xiao-qiang","score":0.80648398399353027}
+[user] vad. status = 1, offset = 1685
+[user] vad. status = 0, offset = 3085
+[user] vad. status = 1, offset = 4765
+[user] vad. status = 0, offset = 6205
 ```
 
 ### Using SDK ameba-dsp

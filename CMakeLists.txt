@@ -85,6 +85,7 @@ endif()
 ameba_submodule_register(aivoice
     p_EXAMPLE_DIRS
     ${c_CMPT_AIVOICE_DIR}/examples/full_flow_offline
+    ${c_CMPT_AIVOICE_DIR}/examples/aivoice_integrated_test
 )
 
 #WARNING: Fixed section, DO NOT change!
