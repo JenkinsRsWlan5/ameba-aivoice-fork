@@ -14,11 +14,11 @@ The pre-recorded audio used in this example is a 3 channel audio, channel 1 and 
 
 ## Supported IC
 
-1. AmebaSmart CA32 (SDK: ameba-rtos)
-2. AmebaLite KM4 (SDK: ameba-rtos)
-3. AmebaDplus KM4 (SDK: ameba-rtos)
-4. AmebaLite DSP (SDK: ameba-dsp)
-5. AmebaSmart Linux (SDK:ameba-linux)
+1. RTL8721Dx KM4 (SDK: ameba-rtos)
+2. RTL8726E DSP (SDK: ameba-dsp)
+3. RTL8713E DSP (SDK: ameba-dsp)
+4. RTL8730E CA32 (SDK: ameba-rtos)
+5. RTL8730E CA32 Linux (SDK:ameba-linux)
 
 ## Build Example
 
