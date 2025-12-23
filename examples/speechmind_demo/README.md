@@ -13,7 +13,8 @@ The audio recorder will in send the 3 channel audio, channel 1 and channel 2 are
 **Note: AFE res, kws lib, fst lib should match the content of audio, otherwise AIVoice can not detect.**
 
 ## Supported IC
-1. AmebaLite DSP (SDK: ameba-dsp)
+1. RTL8726E DSP (SDK: ameba-dsp)
+2. RTL8713E DSP (SDK: ameba-dsp)
 
 ## Build Example
 
