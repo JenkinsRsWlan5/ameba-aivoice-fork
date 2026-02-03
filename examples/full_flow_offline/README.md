@@ -35,10 +35,6 @@ The pre-recorded audio used in this example is a 3 channel audio, channel 1 and 
         AI Config  --->
             [*] Enable TFLITE MICRO
             [*] Enable AIVoice
-                Select AFE Resource (afe_res_2mic50mm)  --->
-                Select VAD Resource (vad_v7_200K)  --->
-                Select KWS Resource (kws_xiaoqiangxiaoqiang_nihaoxiaoqiang_v5_125K)  --->
-                Select ASR Resource (asr_cn_v10_1M)  --->
 
 2. **Build and Download**:
    * Refer to the SDK Examples section of the online documentation to generate images.
