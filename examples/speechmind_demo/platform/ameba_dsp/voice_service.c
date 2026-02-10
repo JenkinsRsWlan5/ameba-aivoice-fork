@@ -291,6 +291,7 @@ static HRESULT *Voice_Create(VOICE_RPC_INIT *pParam, RPC_STRUCT *pRpcStruct, HRE
 	vad_param.sensitivity = (vad_sensitivity_e)Parcel_ReadInt32(parcel);
 	vad_param.left_margin = Parcel_ReadUint32(parcel);
 	vad_param.right_margin = Parcel_ReadUint32(parcel);
+	vad_param.min_speech_duration = Parcel_ReadUint32(parcel);
 
 	struct kws_config kws_param;
 	int keyword_nums = Parcel_ReadInt8(parcel);
